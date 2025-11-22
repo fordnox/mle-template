@@ -13,32 +13,15 @@ A FastAPI-based backend template for ML engineering projects.
 - **HTTP Client**: httpx
 - **Payments**: Stripe
 
-## Development Tools
+## Environment Variables
 
-- pytest - Testing
-- mypy - Type checking
-- ruff - Linting
-- black - Code formatting
-- isort - Import sorting
-- pre-commit - Git hooks
+Copy `backend/.env.example` to `backend/.env` and configure the following:
 
-## Getting Started
-
-```bash
-cd backend
-uv sync
-uv run fastapi dev app/main.py
-```
-
-## Docker
-
-```bash
-cd backend
-docker build -t mle-template .
-docker run -p 80:80 mle-template
-```
-
-## API Endpoints
-
-- `GET /` - Root endpoint (status check)
-- `GET /health` - Health check endpoint
+| Variable | Description |
+|----------|-------------|
+| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable key for client-side payment integration |
+| `STRIPE_SECRET_KEY` | Stripe secret key for server-side payment processing |
+| `APP_DOMAIN` | Application domain (e.g., `example.com`) |
+| `APP_DATA_PATH` | File system path for application data storage |
+| `APP_DATABASE_DSN` | Database connection string (SQLAlchemy format) |
+| `OPENROUTER_API_KEY` | API key for OpenRouter AI model routing service |

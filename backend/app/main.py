@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 
+from app.config import settings
+
 app = FastAPI(title="API", version="0.0.1")
 
 @app.get("/")
 async def root():
     return {
-        "message": "ok",
+        "message": settings.APP_DOMAIN,
         "status": "running",
     }
 
