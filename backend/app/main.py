@@ -7,6 +7,7 @@ app = FastAPI(title="API", version="0.0.1")
 
 app.include_router(dashboard.router, prefix="/dashboard")
 
+
 @app.get("/")
 async def root():
     return {

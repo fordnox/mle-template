@@ -8,6 +8,7 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
+
 class OpenRouterError(Exception):
     """OpenRouter API error."""
 

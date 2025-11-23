@@ -7,11 +7,12 @@ class Settings(BaseSettings):
     )
 
     DEBUG: bool = False
-    APP_DOMAIN: str
-    APP_DATA_PATH: str
-    APP_DATABASE_DSN: str = "sqlite:///./sql_app.db"
+    APP_DOMAIN: str = "example.com"
+    APP_DATA_PATH: str = "/tmp"
+    APP_DATABASE_DSN: str = "sqlite:////tmp/database.db"
     STRIPE_PUBLISHABLE_KEY: str
     STRIPE_SECRET_KEY: str
     OPENROUTER_API_KEY: str
+
 
 settings = Settings()
