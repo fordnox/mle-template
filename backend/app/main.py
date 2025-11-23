@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 
-from app.config import settings
+from app.core.config import settings
+from app.routers import dashboard
 
 app = FastAPI(title="API", version="0.0.1")
+
+app.include_router(dashboard.router, prefix="/dashboard")
 
 @app.get("/")
 async def root():
