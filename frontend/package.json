@@ -4,15 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "npm run generate-rss && npm run generate-blog-manifest && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
-    "generate-client": "openapi-typescript openapi.json -o ./src/lib/schema.d.ts",
-    "generate-thumbs": "tsx scripts/generate-design-thumbs.ts",
-    "generate-blog-image": "tsx scripts/generate-blog-image.ts",
-    "generate-blog-images": "tsx scripts/generate-all-blog-images.ts",
-    "generate-rss": "tsx scripts/generate-rss.ts",
-    "generate-blog-manifest": "tsx scripts/generate-blog-manifest.ts"
+    "generate-client": "openapi-typescript ../backend/openapi.json -o ./src/lib/schema.d.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.2",

@@ -10,8 +10,6 @@ class Settings(BaseSettings):
     APP_DOMAIN: str = "example.com"
     APP_DATA_PATH: str = "/tmp"
     APP_DATABASE_DSN: str = "sqlite:////tmp/database.db"
-    STRIPE_PUBLISHABLE_KEY: str
-    STRIPE_SECRET_KEY: str
     OPENROUTER_API_KEY: str
 
 

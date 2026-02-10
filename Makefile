@@ -22,6 +22,15 @@ openapi:  ## Generate OpenAPI schema from FastAPI app
 	cd backend && uv run python -c "import app.main; import json; print(json.dumps(app.main.app.openapi()))" > ./openapi.json
 	cd frontend && pnpm run generate-client
 
+migration: ## Create a new migration
+	cd backend && read -p "Enter migration name: " name && uv run alembic revision -m "$$name" --autogenerate
+
+upgrade: ## Apply migrations
+	cd backend && uv run alembic upgrade head
+
+downgrade: ## Apply downgrade migrations
+	cd backend && uv run alembic downgrade -1
+
 test:
 	cd backend && uv run pytest -v 2>&1
 
