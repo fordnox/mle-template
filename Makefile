@@ -31,6 +31,15 @@ upgrade: ## Apply migrations
 downgrade: ## Apply downgrade migrations
 	cd backend && uv run alembic downgrade -1
 
+start-frontend: ## Start the development frontend
+	cd frontend && npm run dev
+
+start-backend: ## Start the development backend
+	cd backend && uv run fastapi dev app/main.py --port 8000 --host localhost
+
+start-worker: ## Start arq worker
+	cd backend && uv run arq app.worker.WorkerSettings
+
 test:
 	cd backend && uv run pytest -v 2>&1
 

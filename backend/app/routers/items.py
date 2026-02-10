@@ -4,8 +4,15 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.repositories.item_repository import ItemRepository
 from app.schemas.item import ItemCreate, ItemResponse, ItemUpdate
+from app.tasks import enqueue_task
 
 router = APIRouter()
+
+
+@router.post("/update-prices", status_code=202)
+async def enqueue_update_prices():
+    job = await enqueue_task("update_item_prices")
+    return {"job_id": job.job_id}
 
 
 @router.get("/", response_model=list[ItemResponse])
