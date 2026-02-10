@@ -25,13 +25,6 @@ export function SectionFaq() {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   <p>{faq.answer}</p>
-                  {faq.image && (
-                    <img
-                      src={faq.image}
-                      alt={faq.question}
-                      className="mt-4 rounded-lg border border-border"
-                    />
-                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
