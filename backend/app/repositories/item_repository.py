@@ -38,3 +38,10 @@ class ItemRepository:
         self.db.delete(item)
         self.db.commit()
         return True
+
+    def apply_bulk_discount(self, min_quantity: int, discount: float) -> int:
+        items = self.db.query(Item).filter(Item.quantity > min_quantity).all()
+        for item in items:
+            item.price = round(item.price * (1 - discount), 2)
+        self.db.commit()
+        return len(items)

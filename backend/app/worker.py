@@ -3,7 +3,7 @@ import logging
 from arq import cron
 
 from app.core.database import SessionLocal
-from app.models.item import Item
+from app.repositories.item_repository import ItemRepository
 from app.tasks import redis_settings
 
 logger = logging.getLogger(__name__)
@@ -13,12 +13,10 @@ async def update_item_prices(ctx: dict) -> int:
     """Example task: apply a 10% discount to all items with quantity > 100."""
     db = SessionLocal()
     try:
-        items = db.query(Item).filter(Item.quantity > 100).all()
-        for item in items:
-            item.price = round(item.price * 0.9, 2)
-        db.commit()
-        logger.info("Updated prices for %d items", len(items))
-        return len(items)
+        repo = ItemRepository(db)
+        count = repo.apply_bulk_discount(min_quantity=100, discount=0.1)
+        logger.info("Updated prices for %d items", count)
+        return count
     finally:
         db.close()
 
