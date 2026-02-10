@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import ItemsPage from './pages/ItemsPage'
+import HomePage from './pages/HomePage.tsx'
 import UserProfilePage from './pages/UserProfilePage'
 import LoginPage from './pages/LoginPage'
 
@@ -9,7 +9,7 @@ function App() {
     <Routes>
       {/* Pages with MainLayout (header + footer) */}
       <Route element={<MainLayout />}>
-        <Route path="/" element={<ItemsPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<UserProfilePage />} />
       </Route>
 

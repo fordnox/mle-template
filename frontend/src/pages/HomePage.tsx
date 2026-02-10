@@ -105,7 +105,7 @@ function ItemForm({
   )
 }
 
-export default function ItemsPage() {
+export default function HomePage() {
   const { data: items = [], isLoading } = useItems()
   const createItem = useCreateItem()
   const updateItem = useUpdateItem()

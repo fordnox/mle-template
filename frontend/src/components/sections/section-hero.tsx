@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button.tsx"
 import { useAuth } from "@/hooks/useAuth.ts"
 import { usePopularRepos } from "@/hooks/useReposQuery.ts"
 import client from "@/lib/api.ts"
-import { RippleGrid } from "@/components/effects/ripple_grid.tsx"
 
 const placeholderExamples = [
   "A restaurant app with menus, reservations, and reviews",
@@ -121,20 +120,6 @@ export function SectionHero() {
 
   return (
     <section className="relative mb-16 px-6 pt-16 isolate">
-      {/* Background Effect */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <RippleGrid
-          gridColor="#22c55e"
-          opacity={0.3}
-          gridSize={30}
-          gridThickness={20}
-          rippleIntensity={0.02}
-          fadeDistance={1.1}
-          vignetteStrength={2.5}
-          glowIntensity={0.15}
-          mouseInteraction={false}
-        />
-      </div>
 
       {/* Main SectionHeroSimple */}
       <div className="relative z-10 text-center mb-10">

@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async"
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google"
 import { AlertCircle, Loader2 } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { RippleGrid } from "@/components/effects/ripple_grid.tsx"
 import { useAuth } from "@/hooks/useAuth"
 import client from "@/lib/api"
 import { config } from "@/lib/config"
@@ -73,19 +72,6 @@ function LoginContent() {
         <meta name="twitter:description" content="Sign in to SchemaHub to create, edit, and manage your database schemas." />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-secondary/5 relative overflow-hidden">
-        {/* Background effect */}
-        <div className="absolute inset-0 z-0">
-          <RippleGrid
-          gridColor="#22c55e"
-          opacity={0.3}
-          gridSize={50}
-          gridThickness={20}
-          rippleIntensity={0.03}
-          fadeDistance={1.2}
-          vignetteStrength={5.5}
-        />
-      </div>
-
         <Card className="max-w-md w-full mx-4 relative z-10">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">{config.VITE_APP_TITLE}</CardTitle>
