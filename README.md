@@ -1,6 +1,6 @@
-# MLE Template
+# Template
 
-A FastAPI-based backend template for ML engineering projects.
+Opinionated web project template for building projects with AI.
 
 ## Tech Stack
 

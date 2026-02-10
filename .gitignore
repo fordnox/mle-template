@@ -209,3 +209,4 @@ __marimo__/
 .idea
 .env
 frontend/node_modules
+database.db
