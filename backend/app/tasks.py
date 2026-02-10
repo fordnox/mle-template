@@ -31,6 +31,7 @@ async def enqueue_task(task_name: str, *args, **kwargs):
     finally:
         await pool.close()
 
+
 # ===== Example Tasks =====
 async def enqueue_task_ping():
     """Enqueue a simple ping task for testing"""

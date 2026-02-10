@@ -46,6 +46,7 @@ export function FeedbackDialog({ children }: FeedbackDialogProps) {
 
     setIsSubmitting(true)
     try {
+      // @ts-expect-error endpoint not yet in backend schema
       const { error } = await api.POST("/feedback", {
         body: {
           topic: topic as "bug" | "feature" | "schema" | "ux" | "other",

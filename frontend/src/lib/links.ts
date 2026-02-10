@@ -2,6 +2,7 @@ import {
   Github,
   LayoutDashboard,
   Linkedin,
+  Package,
   Twitter,
 } from "lucide-react"
 import { config } from "@/lib/config"
@@ -22,6 +23,7 @@ export const sections: NavSection[] = [
     title: "Main",
     links: [
       { path: "/", label: "Home", icon: LayoutDashboard },
+      { path: "/items", label: "Items", icon: Package },
     ],
   },
   {

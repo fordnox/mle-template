@@ -38,12 +38,13 @@ function LoginContent() {
     setIsLoading(true)
     setError(null)
 
+    // @ts-expect-error endpoint not yet in backend schema
     const { data, error: apiError } = await client.POST("/auth/google", {
-      body: { credential: credentialResponse.credential } as unknown as Record<string, never>,
+      body: { credential: credentialResponse.credential },
     })
 
     if (apiError || !data) {
-      const errorMessage = apiError instanceof Error ? apiError.message : "Login failed"
+      const errorMessage = typeof apiError === "object" && apiError && "message" in apiError ? (apiError as any).message : "Login failed"
       setError(errorMessage)
       setIsLoading(false)
       return

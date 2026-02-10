@@ -5,6 +5,7 @@ export interface Config {
   VITE_APP_URL: string
   VITE_API_URL: string
   VITE_GITHUB_URL: string
+  VITE_GOOGLE_CLIENT_ID: string
 }
 
 export const config: Config = {
@@ -14,4 +15,5 @@ export const config: Config = {
   VITE_APP_URL: import.meta.env.VITE_APP_URL || "https://example.com",
   VITE_API_URL: import.meta.env.VITE_API_URL || "http://localhost:8000",
   VITE_GITHUB_URL: import.meta.env.VITE_GITHUB_URL || "https://github.com/fordnox/mle-template",
+  VITE_GOOGLE_CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID || "",
 }

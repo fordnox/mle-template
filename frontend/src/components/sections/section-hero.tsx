@@ -100,6 +100,7 @@ export function SectionHero() {
     }
     setIsGenerating(true)
 
+    // @ts-expect-error endpoint not yet in backend schema
     const { data, error } = await client.POST("/repo", {
       body: { description: vibeInput },
     })
@@ -111,7 +112,7 @@ export function SectionHero() {
     }
 
     // TODO: Get owner from auth context when available
-    navigate(`/schemahub/${data.name}`)
+    navigate(`/schemahub/${(data as any).name}`)
   }
 
   const handleTemplateClick = (ownerUsername: string, projectName: string) => {
