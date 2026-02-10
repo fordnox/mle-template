@@ -60,17 +60,8 @@ export default function HomePage() {
         </script>
       </Helmet>
       <SectionHero />
-      <SectionPopularSchemas />
-      <SectionRecentSchemas />
-      <SectionDesignTemplates />
-      <SectionApiEndpoints />
-      <SectionExportFormats />
-      <SectionAiWorkflow />
-      <SectionBlogPosts />
-      <SectionPremiumFeatures />
       <SectionTestimonials />
       <SectionFaq />
-      <SectionDemoSchema />
     </>
   )
 }
