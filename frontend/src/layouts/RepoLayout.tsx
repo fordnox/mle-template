@@ -1,7 +1,7 @@
 import { useParams, Outlet } from "react-router-dom"
 import { ProjectProvider } from "@/contexts/ProjectContext"
 import { useProjectQuery } from "@/hooks/useProjectQuery"
-import { Header } from "@/layouts/header.tsx"
+import { Header } from "@/layouts/Header.tsx"
 
 export default function RepoLayout() {
   const { id } = useParams<{ username: string; id: string }>()
