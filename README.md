@@ -1,27 +1,20 @@
-# MLE Template
+# Template
 
-A FastAPI-based backend template for ML engineering projects.
+Opinionated web project template for building projects with AI.
 
-## Tech Stack
+## Backend Tech Stack
 
 - **Framework**: FastAPI
 - **Python**: 3.12+
 - **Package Manager**: uv
 - **Database**: PostgreSQL (SQLAlchemy + psycopg2)
 - **Validation**: Pydantic
+- **DB Migrations**: alembic
 - **Task Queue**: arq
 - **HTTP Client**: httpx
-- **Payments**: Stripe
 
-## Environment Variables
+## Rules before each commit
 
-Copy `backend/.env.example` to `backend/.env` and configure the following:
-
-| Variable | Description |
-|----------|-------------|
-| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable key for client-side payment integration |
-| `STRIPE_SECRET_KEY` | Stripe secret key for server-side payment processing |
-| `APP_DOMAIN` | Application domain (e.g., `example.com`) |
-| `APP_DATA_PATH` | File system path for application data storage |
-| `APP_DATABASE_DSN` | Database connection string (SQLAlchemy format) |
-| `OPENROUTER_API_KEY` | API key for OpenRouter AI model routing service |
+1. Test must pass: run `make test` and fix any errors.
+2. Run `make lint` to check code style.
+3. Run `make openapi` to generate new OpenAPI schema.
